@@ -103,6 +103,7 @@
 
       &:disabled {
         cursor: not-allowed;
+        opacity: 0.3;
       }
 
       &:hover:not(:disabled) {
@@ -114,6 +115,14 @@
         height: 4rem;
         border-radius: 1rem;
         background-color: var(--purple-400);
+      }
+
+      &.isActive {
+        filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+      }
+
+      &.isActive:hover {
+        filter: brightness(0.6) invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
       }
     }
   }

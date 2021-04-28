@@ -7,9 +7,13 @@ import { convertDurationToString } from '../../utils/convertDurationToString';
 import Image from 'next/image';
 import styles from './episode.module.scss';
 import Link from 'next/link';
+import Head from 'next/head';
+import { usePlayer } from '../../contexts/PlayerContext';
 
 export default function Episode({ episode }) {
   const router = useRouter();
+
+  const { play } = usePlayer();
 
   if (router.isFallback) {
     // para quando estiver em fallback true em GetStaticPaths
@@ -18,6 +22,9 @@ export default function Episode({ episode }) {
 
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>Poadcastr | {episode.title}</title>
+      </Head>
       <div className={styles.thumbnailContainer}>
         <Link href="/">
           <button>
@@ -25,7 +32,7 @@ export default function Episode({ episode }) {
           </button>
         </Link>
         <Image width={700} height={160} src={episode.thumbnail} objectFit="cover" />
-        <button type="button">
+        <button type="button" onClick={() => play(episode)}>
           <img src="/play.svg" alt="Tocar Episódio" />
         </button>
       </div>
