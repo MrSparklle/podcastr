@@ -1,3 +1,9 @@
+# Web Podcast Player
+
+Frontend: React + Nest.js (Context API, Server Side Render, Server Side Generator)
+
+Backend: Json Server (mocked)
+
 https://user-images.githubusercontent.com/992049/152222292-4f3b0a70-adf1-434b-a323-ce36621a90a3.mov
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
